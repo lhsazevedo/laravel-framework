@@ -42,11 +42,11 @@ class FoundationAliasLoaderTest extends TestCase
      */
     public function testLoaderCanAliasAndLoadClasses()
     {
-        $loader = AliasLoader::getInstance(['some_alias_foo_bar' => FoundationAliasLoaderStub::class]);
+        $loader = AliasLoader::getInstance(['some_alias_foo' => FoundationAliasLoaderStub::class]);
 
-        $result = $loader->load('some_alias_foo_bar');
+        $result = $loader->load('some_alias_foo');
 
-        $this->assertInstanceOf(FoundationAliasLoaderStub::class, new \some_alias_foo_bar);
+        $this->assertInstanceOf(FoundationAliasLoaderStub::class, new \some_alias_foo);
         $this->assertTrue($result);
 
         $result2 = $loader->load('bar');
