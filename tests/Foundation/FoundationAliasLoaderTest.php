@@ -37,6 +37,9 @@ class FoundationAliasLoaderTest extends TestCase
         $this->assertEquals(['foo2' => 'bar2', 'foo' => 'baz'], $loader->getAliases());
     }
 
+    /**
+     * @runInSeparateProcess
+     */
     public function testLoaderCanAliasAndLoadClasses()
     {
         $loader = AliasLoader::getInstance(['some_alias_foo_bar' => FoundationAliasLoaderStub::class]);
@@ -50,6 +53,9 @@ class FoundationAliasLoaderTest extends TestCase
         $this->assertNull($result2);
     }
 
+    /**
+     * @runInSeparateProcess
+     */
     public function testSetAlias()
     {
         $loader = AliasLoader::getInstance();
